@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Counter} from "../src/Counter.sol";
 
 contract EVMPuzzlesTest is Test {
     address puzzle;

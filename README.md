@@ -35,3 +35,21 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in Foundry, migrated fr
   - [(\*)](./docs/evmpuzzles/Puzzles.md) Puzzles
 - [**More EVM Puzzles**](https://github.com/daltyboy11/more-evm-puzzles) | [My Writeups](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil)
   - [(\*)](./docs/moreevmpuzzles/MorePuzzles.md) More Puzzles
+
+## Setup
+
+You can solve these puzzles by yourself by creating a repo from scratch too. Do the following:
+
+```sh
+# create a folder
+mkdir <your-project>
+cd <your-project>
+
+# initialize foundry
+forge init
+
+# install OpenZeppelin dependency
+forge install git@github.com:OpenZeppelin/openzeppelin-contracts.git
+```
+
+The EVM puzzles are simple test files, I didn't bother creating contracts for each puzzle there. The real deal is with Ethernaut puzzles.
