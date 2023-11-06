@@ -1,6 +1,6 @@
 # Ethernaut Solutions
 
-Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in Foundry, migrated from my previous [solutions with Harhdat](https://github.com/erhant/solidity-ctfs).
+Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in Foundry, migrated from my previous [solutions with Hardhat](https://github.com/erhant/solidity-ctfs).
 
 - [**Ethernaut**](https://ethernaut.openzeppelin.com/) | [My Writeups](https://dev.to/erhant/series/18918)
   - [(1)](./docs/ethernaut/Fallback.md) Fallback

