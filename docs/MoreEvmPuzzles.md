@@ -4,7 +4,7 @@
 
 ## Puzzle 1
 
-```sh
+```js
 00      36      CALLDATASIZE
 01      34      CALLVALUE
 02      0A      EXP
@@ -78,6 +78,7 @@
 46      FE      INVALID
 47      5B      JUMPDEST
 48      00      STOP
+// 36340A56FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFE5B58360156FEFE5B00
 ```
 
 In this puzzle, we have two jumps to be concerned:
@@ -87,7 +88,7 @@ In this puzzle, we have two jumps to be concerned:
 
 ## Puzzle 2
 
-```sh
+```js
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      6000      PUSH1 00
@@ -114,6 +115,7 @@ In this puzzle, we have two jumps to be concerned:
 1E      FE        INVALID
 1F      5B        JUMPDEST
 20      00        STOP
+// 3660006000373660006000F0600080808080945AF13D600a14601F57FEFEFE5B00
 ```
 
 Don't be afraid of what is going on above there. We simply create a contract, and call it; expecting the call to return something with the size `0x0A` as a result. So, that is simply what we will do!
@@ -134,9 +136,11 @@ DUP1       // offset irrelevant
 RETURN
 ```
 
+This results in the following bytecode: `0x600a600c600039600a6000f3600a80f3`.
+
 ## Puzzle 3
 
-```sh
+```js
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      6000      PUSH1 00
@@ -161,6 +165,7 @@ RETURN
 1D      FE        INVALID
 1E      5B        JUMPDEST
 1F      00        STOP
+// 3660006000373660006000F06000808080935AF460055460aa14601e57fe5b00
 ```
 
 This one is similar to the previous, again a contract is created but this time a delegate-call is made. After that, it is checked whether the 5th slot in the storage is equal to `0xAA`. So, we just have to write a contract that sets `0xAA` to slot 5.
@@ -184,7 +189,7 @@ In bytecode terms: `0x6005600c60003960056000f360aa600555` does the trick.
 
 ## Puzzle 4
 
-```sh
+```js
 00      30        ADDRESS
 01      31        BALANCE
 02      36        CALLDATASIZE
@@ -206,9 +211,10 @@ In bytecode terms: `0x6005600c60003960056000f360aa600555` does the trick.
 17      FD        REVERT
 18      5B        JUMPDEST
 19      00        STOP
+// 30313660006000373660003031F0319004600214601857FD5B00
 ```
 
-First, assuming that our account has 0 balance, the balance of this address during runtime will be equal to the `callvalue`. Then, notice that `CREATE` has value equal to `callvalue`, meaning that it is consuming all our balance.
+First, assuming that the challenge contract has 0 initial balance, the balance of this address during runtime will be equal to the `callvalue`. Then, notice that `CREATE` has value equal to `callvalue`, meaning that it is consuming all our balance.
 
 Then, we check the balance of that deployed contract, and expect it to be half of the initial balance (calculated in the first two lines). To make that possible, we simply have to make our contract send half of the `callvalue` to somewhere else.
 
@@ -235,14 +241,14 @@ CALL
 // return nothing
 PUSH1 0x00
 DUP1
-RETURN     // returns the code copied above
+RETURN
 ```
 
 The initialization code does not have to return anything, so we can return right after making our call. To sum up, our calldata is `0x600080808060023404815af1600080f3` and the callvalue can be any even number!
 
 ## Puzzle 5
 
-```sh
+```js
 00      6020      PUSH1 20
 02      36        CALLDATASIZE
 03      11        GT
@@ -264,6 +270,7 @@ The initialization code does not have to return anything, so we can return right
 18      FD        REVERT
 19      5B        JUMPDEST
 1A      00        STOP
+// 60203611600857FD5B366000600037365903600314601957FD5B00
 ```
 
 In the beginning, we simply need to have a calldata that is greater than `0x20`. In the second part, there is a `CALLDATACOPY` followed by `MSIZE`. Now, `CALLDATACOPY` will copy the calldata into memory, but note that this will happen in 32-byte chunks. `MSIZE` will return the highest reached offset in memory. Suppose our calldata size is larger than `0x20` but less than `0x40`. When written into memory, even if calldata size is less than `0x40` the highest memory offset will be `0x40`, due to it being written in chunks of 32 bytes.
@@ -272,7 +279,7 @@ We want `MSIZE - CALLDATASIZE` to be equal to 3, so we can have a calldata of si
 
 ## Puzzle 6
 
-```sh
+```js
 00      7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0      PUSH32 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0
 21      34                                                                      CALLVALUE
 22      01                                                                      ADD
@@ -283,13 +290,14 @@ We want `MSIZE - CALLDATASIZE` to be equal to 3, so we can have a calldata of si
 29      FD                                                                      REVERT
 2A      5B                                                                      JUMPDEST
 2B      00                                                                      STOP
+// 7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03401600114602a57fd5b00
 ```
 
 Here, we have a HUGE number `0xFF...F0` and we add some callvalue to it, expecting the result to be `0x01`. How is that possible? Well, it's the good ol' overflow issue right here. If we add `0x0F` to it, the whole thing becomes `0xFF..FF`. So, we add just 1 more to that and it becomes `0x00..00`. To get to `0x00..01`, we just add once more. Basically, our callvalue is 17 (`0x0F + 0x01 + 0x01`).
 
 ## Puzzle 7
 
-```sh
+```js
 00      5A        GAS
 01      34        CALLVALUE
 02      5B        JUMPDEST
@@ -315,6 +323,7 @@ Here, we have a HUGE number `0xFF...F0` and we add some callvalue to it, expecti
 1C      FD        REVERT
 1D      5B        JUMPDEST
 1E      00        STOP
+// 5a345b60019003806000146011576002565b5a90910360a614601d57fd5b00
 ```
 
 In the first, we have a `CALLVALUE - 0x01 == 0x00` check. If true, we go to line `0x11`; otherwise, we go to line `0x02`.
@@ -328,7 +337,7 @@ Looking at these together, we must be looping for a while so that the gas spent 
 
 ## Puzzle 8
 
-```sh
+```js
 00      34        CALLVALUE
 01      15        ISZERO
 02      19        NOT
@@ -366,6 +375,7 @@ Looking at these together, we must be looping for a while so that the gas spent 
 2E      FD        REVERT
 2F      5B        JUMPDEST
 30      00        STOP
+// 341519600757fd5b3660006000373660006000f047600060006000600047865af1600114602857fd5b4714602f57fd5b00
 ```
 
 The first jump will occur if callvalue is non-zero, because `ISZERO` will return `0` and `NOT` will make it to be `1` again, thus enabling the `JUMPI` on line `0x05`.
@@ -397,11 +407,11 @@ GAS         // (call:1) remaining gas
 CALL        // sends selfbalance to msg.sender
 ```
 
-Our calldata is as written above, which results in a contract to be deployed, which returns `0x01` and forwards all it's balance to the caller when it is called.
+Our calldata `0x600f600c600039600f6000f3600160805260016080808047335af1` is as written above, which results in a contract to be deployed that returns `0x01` and forwards all it's balance to the caller when it is called.
 
 ## Puzzle 9
 
-```sh
+```js
 00      34        CALLVALUE
 01      6000      PUSH1 00
 03      52        MSTORE
@@ -420,6 +430,7 @@ Our calldata is as written above, which results in a contract to be deployed, wh
 15      FD        REVERT
 16      5B        JUMPDEST
 17      00        STOP
+// 34600052602060002060F81C60A814601657FDFDFDFD5B00
 ```
 
 First, our callvalue is stored in the 0th slot of memory. Then, 20 bytes of this value is given to SHA3 as input. The resulting hash is shifted `0xF8` times, meaning `248` times, so there remains just a single byte as a result (`256 - 248 = 8`). We want this to equal `0xA8`.
@@ -430,7 +441,7 @@ We can write a script for that, but I will just give the answer to be 47 here, w
 
 ## Puzzle 10
 
-```sh
+```js
 00      6020                                                                    PUSH1 20
 02      6000                                                                    PUSH1 00
 04      6000                                                                    PUSH1 00
@@ -453,6 +464,7 @@ We can write a script for that, but I will just give the answer to be 47 here, w
 5C      FD                                                                      REVERT
 5D      5B                                                                      JUMPDEST
 5E      00                                                                      STOP
+// 602060006000376000517ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f01660206020600037600051177fabababababababababababababababababababababababababababababababab14605d57fd5b00
 ```
 
 In the first part, a 32-byte are loaded from the calldata. Then, this is bitwise-AND'ed with 32-byte `0xF0F0..F0` of 32 bytes. Next, another 32-byte is read from the calldata and it is bitwise-OR'ed with the previous result. We require this final result to be equal to `0xABAB..AB`.
