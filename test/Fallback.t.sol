@@ -22,7 +22,7 @@ contract FallbackTest is Test {
         (bool ok,) = address(target).call{value: 1}("");
         assertTrue(ok);
 
-        // confirm ownership
+        // confirm ownership for the next step
         assertEq(target.owner(), address(player));
 
         // withdraw
