@@ -34,10 +34,7 @@ contract FallbackTest is Test {
         attack();
         vm.stopPrank();
 
-        // owner should be the player
         assertEq(target.owner(), address(player), "owner should be the player");
-
-        // balance should be drained
         assertEq(address(target).balance, 0, "balance should be drained");
     }
 }

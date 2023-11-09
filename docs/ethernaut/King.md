@@ -6,7 +6,7 @@
 
 **Objective of CTF:**
 
-- Unlock the vault.
+- Break the game by unrightfully winning it!
 
 **Target contract:**
 

@@ -34,7 +34,6 @@ contract CoinflipTest is Test {
         attack();
         vm.stopPrank();
 
-        // must have at least 10 consecutive wins
         assertTrue(target.consecutiveWins() >= 10, "must have at least 10 consecutive wins");
     }
 }

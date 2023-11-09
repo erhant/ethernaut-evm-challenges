@@ -23,7 +23,6 @@ contract TelephoneTest is Test {
         attack();
         vm.stopPrank();
 
-        // must be the owner
         assertEq(target.owner(), player, "must be the owner");
     }
 }

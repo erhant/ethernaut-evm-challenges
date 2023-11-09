@@ -31,6 +31,7 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in Foundry, migrated fr
   - [(26)](./docs/ethernaut/DoubleEntryPoint.md) Double Entry Point
   - [(27)](./docs/ethernaut/GoodSamaritan.md) Good Samaritan
   - [(28)](./docs/ethernaut/GatekeeperThree.md) Gatekeeper Three
+  - 29: Switch (TODO)
 - [**EVM Puzzles**](https://github.com/fvictorio/evm-puzzles/) | [My Writeups](https://dev.to/erhant/evm-puzzles-walkthrough-471a)
   - [(\*)](./docs/evmpuzzles/Puzzles.md) Puzzles
 - [**More EVM Puzzles**](https://github.com/daltyboy11/more-evm-puzzles) | [My Writeups](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil)
