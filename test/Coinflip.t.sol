@@ -24,6 +24,7 @@ contract CoinflipTest is Test {
             // we will attack once for each block,
             // so we use `vm.roll` to simulate mining a new block
             vm.roll(startingBlock + i);
+
             bool result = attacker.psychicFlip();
             assertTrue(result, "failed psychic flip");
         }
