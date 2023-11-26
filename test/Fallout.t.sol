@@ -9,9 +9,10 @@ contract FalloutTest is Test {
     address player;
 
     function setUp() public {
-        target = new Fallout();
         player = makeAddr("player");
         vm.deal(player, 1 ether);
+
+        target = new Fallout();
     }
 
     function attack() private {

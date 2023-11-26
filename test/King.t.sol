@@ -11,11 +11,11 @@ contract KingTest is Test {
     Attacker attacker;
 
     function setUp() public {
-        target = (new King){value: 1 ether}();
-        assertEq(target._king(), address(this), "expected test to be king");
-
         player = makeAddr("player");
         vm.deal(player, 10 ether);
+
+        target = (new King){value: 1 ether}();
+        assertEq(target._king(), address(this), "expected test to be king");
 
         victim = makeAddr("victim");
         vm.deal(victim, 100 ether);

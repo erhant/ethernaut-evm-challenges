@@ -1,22 +1,22 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Test} from "forge-std/Test.sol";
-import {Force} from "../src/Force.sol";
+import {Test, console} from "forge-std/Test.sol";
+import {GatekeeperOne} from "~/GatekeeperOne.sol";
 
-contract ForceTest is Test {
-    Force target;
+contract GatekeeperOneTest is Test {
+    GatekeeperOne target;
     address player;
 
     function setUp() public {
         player = makeAddr("player");
         vm.deal(player, 1 ether);
 
-        target = new Force();
+        target = new GatekeeperOne();
     }
 
     function attack() private {
-        new Attacker{value: 1}(address(target));
+        // TODO: attack
     }
 
     function testAttack() public {
@@ -24,12 +24,12 @@ contract ForceTest is Test {
         attack();
         vm.stopPrank();
 
-        assertGt(address(target).balance, 0, "balance should be non-zero");
+        assertEq(target.entrant(), player, "player must be the entrant");
     }
 }
 
 contract Attacker {
-    constructor(address _target) payable {
-        selfdestruct(payable(_target));
-    }
+    address owner;
+
+    constructor() {}
 }

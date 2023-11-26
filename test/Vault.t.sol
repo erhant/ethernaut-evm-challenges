@@ -9,10 +9,11 @@ contract VaultTest is Test {
     address player;
 
     function setUp() public {
-        bytes32 password = keccak256("letmein");
-        target = new Vault(password);
         player = makeAddr("player");
         vm.deal(player, 1 ether);
+
+        bytes32 password = keccak256("letmein");
+        target = new Vault(password);
     }
 
     function attack() private {

@@ -9,9 +9,10 @@ contract CoinflipTest is Test {
     address player;
 
     function setUp() public {
-        target = new CoinFlip();
         player = makeAddr("player");
         vm.deal(player, 1 ether);
+
+        target = new CoinFlip();
     }
 
     function attack() private {

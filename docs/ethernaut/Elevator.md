@@ -4,7 +4,7 @@
 
 **Objective of CTF:**
 
-- Steal all the funds from the contract.
+- TODO: write the objective
 
 **Target contract:**
 

@@ -13,14 +13,12 @@ contract ReentrancyTest is Test {
     uint256 playerBalance = 0.1 ether;
 
     function setUp() public {
-        target = new Reentrancy();
-
-        // contract has some donations by the owner at first
-        target.donate{value: contractBalance}(address(this));
-
-        // player starts with 1 ether
         player = makeAddr("player");
         vm.deal(player, playerBalance);
+
+        // contract has some donations by the owner at first
+        target = new Reentrancy();
+        target.donate{value: contractBalance}(address(this));
     }
 
     function attack() private {

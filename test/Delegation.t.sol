@@ -9,10 +9,11 @@ contract DelegationTest is Test {
     address player;
 
     function setUp() public {
-        Delegate delegate = new Delegate(msg.sender);
-        target = new Delegation(address(delegate));
         player = makeAddr("player");
         vm.deal(player, 1 ether);
+
+        Delegate delegate = new Delegate(msg.sender);
+        target = new Delegation(address(delegate));
     }
 
     function attack() private {

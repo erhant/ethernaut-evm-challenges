@@ -9,9 +9,10 @@ contract FallbackTest is Test {
     address player;
 
     function setUp() public {
-        target = new Fallback();
         player = makeAddr("player");
         vm.deal(player, 1 ether);
+
+        target = new Fallback();
     }
 
     function attack() private {
