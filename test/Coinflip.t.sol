@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {CoinFlip} from "../src/Coinflip.sol";
+import {CoinFlip} from "~/Coinflip.sol";
 
 contract CoinflipTest is Test {
     CoinFlip target;

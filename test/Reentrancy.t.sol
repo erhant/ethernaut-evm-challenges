@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Reentrancy} from "../src/Reentrancy.sol";
+import {Reentrancy} from "~/Reentrancy.sol";
 
 contract ReentrancyTest is Test {
     Reentrancy target;
@@ -35,6 +35,7 @@ contract ReentrancyTest is Test {
         vm.stopPrank();
 
         assertEq(address(target).balance, 0, "target must be drained");
+        assertGt(player.balance, contractBalance, "player must have stolen the balance");
     }
 
     receive() external payable {}

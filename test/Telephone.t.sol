@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Telephone} from "../src/Telephone.sol";
+import {Telephone} from "~/Telephone.sol";
 
 contract TelephoneTest is Test {
     Telephone target;

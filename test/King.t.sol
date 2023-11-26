@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {King} from "../src/King.sol";
+import {King} from "~/King.sol";
 
 contract KingTest is Test {
     King target;

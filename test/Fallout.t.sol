@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Fallout} from "../src/Fallout.sol";
+import {Fallout} from "~/Fallout.sol";
 
 contract FalloutTest is Test {
     Fallout target;
