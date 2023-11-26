@@ -9,8 +9,8 @@ contract ReentrancyTest is Test {
     address player;
     Attacker attacker;
 
-    uint256 contractBalance = 1 ether;
-    uint256 playerBalance = 0.1 ether;
+    uint256 contractBalance = 1.05 ether;
+    uint256 playerBalance = 0.2 ether;
 
     function setUp() public {
         player = makeAddr("player");

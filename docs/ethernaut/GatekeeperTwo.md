@@ -79,7 +79,7 @@ modifier gateThree(bytes8 _gateKey) {
 
 It is just an XOR operation (often denoted with ⊕), and there is really only one parameter we can control here: the gate key. Well, how do we find it? XOR has the property that if the same value XORs itself they cancel out; furthermore, XOR is commutative so `a ⊕ b = b ⊕ a`. Starting with `a ⊕ b = c`, if we XOR both sides with `a` we get `a ⊕ a ⊕ b = c ⊕ a`, and the left side cancels out to give `b = c ⊕ a`.
 
-One more thing: `(uint64(0) - 1)` causes is not really good for Solidity, and even caused gas estimation errors for me! The result is basically the maximum possible value of `uint64`, and we have a cool way to find it via `type(uint64).max`.
+One more thing: `(uint64(0) - 1)` is not really good for Solidity, and even caused gas estimation errors for me! The result is basically the maximum possible value of `uint64`, and we have a cool way to find it via `type(uint64).max`.
 
 We can safely find the gate key as:
 

