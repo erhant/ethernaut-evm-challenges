@@ -20,8 +20,8 @@ contract PrivacyTest is Test {
         // we can either look at the constructor args from etherscan to solve this,
         // or, we can read the storage using a tool like evm.storage or something
         //
-        // foundry provides a method to do this via `vm.load`
-        // so we use that instead
+        // foundry provides a method to do this via `vm.load` so we use that instead.
+        // we need to read the 6th slot (i.e. slot index 5)
         bytes16 key = bytes16(vm.load(address(target), bytes32(uint256(5))));
         target.unlock(key);
     }
