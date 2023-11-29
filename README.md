@@ -1,43 +1,72 @@
-# Ethernaut Solutions
+# Ethernaut & EVM Puzzles Solutions
 
 Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://book.getfoundry.sh/), migrated from my previous [solutions with Hardhat](https://github.com/erhant/solidity-ctfs).
 
-- [**Ethernaut**](https://ethernaut.openzeppelin.com/) | [Writeups](https://dev.to/erhant/series/18918)
-  - [(**1**)](./docs/ethernaut/Fallback.md) Fallback
-  - [(**2**)](./docs/ethernaut/Fallout.md) Fallout
-  - [(**3**)](./docs/ethernaut/Coinflip.md) CoinFlip
-  - [(**4**)](./docs/ethernaut/Telephone.md) Telephone
-  - [(**5**)](./docs/ethernaut/Token.md) Token
-  - [(**6**)](./docs/ethernaut/Delegation.md) Delegation
-  - [(**7**)](./docs/ethernaut/Force.md) Force
-  - [(**8**)](./docs/ethernaut/Vault.md) Vault
-  - [(**9**)](./docs/ethernaut/King.md) King
-  - [(**10**)](./docs/ethernaut/Reentrancy.md) Reentrancy
-  - [(**11**)](./docs/ethernaut/Elevator.md) Elevator
-  - [(**12**)](./docs/ethernaut/Privacy.md) Privacy
-  - [(**13**)](./docs/ethernaut/GatekeeperOne.md) Gatekeeper One
-  - [(**14**)](./docs/ethernaut/GatekeeperTwo.md) Gatekeeper Two
-  - [(**15**)](./docs/ethernaut/NaughtCoin.md) Naught Coin
-  - [(**16**)](./docs/ethernaut/Preservation.md) Preservation
-  - [(**17**)](./docs/ethernaut/Recovery.md) Recovery
-  - [(**18**)](./docs/ethernaut/MagicNumber.md) Magic Number
-  - [(**19**)](./docs/ethernaut/AlienCodex.md) Alien Codex
-  - [(**20**)](./docs/ethernaut/Denial.md) Denial
-  - [(**21**)](./docs/ethernaut/Shop.md) Shop
-  - [(**22**)](./docs/ethernaut/DexOne.md) Dex One
-  - [(**23**)](./docs/ethernaut/DexTwo.md) Dex Two
-  - [(**24**)](./docs/ethernaut/PuzzleWallet.md) Puzzle Wallet
-  - [(**25**)](./docs/ethernaut/Motorbike.md) Motorbike
-  - [(**26**)](./docs/ethernaut/DoubleEntryPoint.md) Double Entry Point
-  - [(**27**)](./docs/ethernaut/GoodSamaritan.md) Good Samaritan
-  - [(**28**)](./docs/ethernaut/GatekeeperThree.md) Gatekeeper Three
-  - [(**29**)](/): Switch (TODO)
-- [**EVM Puzzles**](https://github.com/fvictorio/evm-puzzles/) | [Writeups](https://dev.to/erhant/evm-puzzles-walkthrough-471a)
-  - [(**\***)](./docs/evmpuzzles/Puzzles.md) Puzzles
-- [**More EVM Puzzles**](https://github.com/daltyboy11/more-evm-puzzles) | [Writeups](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil)
-  - [(**\***)](./docs/moreevmpuzzles/MorePuzzles.md) More Puzzles
+## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-## Setup
+For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918).
+
+- [x] Fallback
+- [x] Fallout
+- [x] CoinFlip
+- [x] Telephone
+- [x] Token
+- [x] Delegation
+- [x] Force
+- [x] Vault
+- [x] King
+- [x] Reentrancy
+- [x] Elevator
+- [x] Privacy
+- [x] Gatekeeper One
+- [x] Gatekeeper Two
+- [x] Naught Coin
+- [x] Preservation
+- [x] Recovery
+- [x] Magic Number
+- [x] Alien Codex
+- [x] Denial
+- [ ] Shop
+- [ ] Dex One
+- [ ] Dex Two
+- [ ] Puzzle Wallet
+- [ ] Motorbike
+- [ ] Double Entry Point
+- [ ] Good Samaritan
+- [ ] Gatekeeper Three
+- [ ] Switch
+
+## [EVM Puzzles](https://github.com/fvictorio/evm-puzzles/)
+
+For my old write-ups via Hardhat, see [here](https://dev.to/erhant/evm-puzzles-walkthrough-471a).
+
+- [x] [Puzzle 1](./docs/EvmPuzzles.md#puzzle-1)
+- [x] [Puzzle 2](./docs/EvmPuzzles.md#puzzle-2)
+- [x] [Puzzle 3](./docs/EvmPuzzles.md#puzzle-3)
+- [x] [Puzzle 4](./docs/EvmPuzzles.md#puzzle-4)
+- [x] [Puzzle 5](./docs/EvmPuzzles.md#puzzle-5)
+- [x] [Puzzle 6](./docs/EvmPuzzles.md#puzzle-6)
+- [x] [Puzzle 7](./docs/EvmPuzzles.md#puzzle-7)
+- [x] [Puzzle 8](./docs/EvmPuzzles.md#puzzle-8)
+- [x] [Puzzle 9](./docs/EvmPuzzles.md#puzzle-9)
+- [x] [Puzzle 10](./docs/EvmPuzzles.md#puzzle-10)
+
+## [More EVM Puzzles](https://github.com/daltyboy11/more-evm-puzzles)
+
+For my old write-ups via Hardhat, see [here](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil).
+
+- [x] [Puzzle 1](./docs/MoreEvmPuzzles.md#puzzle-1)
+- [x] [Puzzle 2](./docs/MoreEvmPuzzles.md#puzzle-2)
+- [x] [Puzzle 3](./docs/MoreEvmPuzzles.md#puzzle-3)
+- [x] [Puzzle 4](./docs/MoreEvmPuzzles.md#puzzle-4)
+- [x] [Puzzle 5](./docs/MoreEvmPuzzles.md#puzzle-5)
+- [x] [Puzzle 6](./docs/MoreEvmPuzzles.md#puzzle-6)
+- [x] [Puzzle 7](./docs/MoreEvmPuzzles.md#puzzle-7)
+- [x] [Puzzle 8](./docs/MoreEvmPuzzles.md#puzzle-8)
+- [x] [Puzzle 9](./docs/MoreEvmPuzzles.md#puzzle-9)
+- [x] [Puzzle 10](./docs/MoreEvmPuzzles.md#puzzle-10)
+
+## Solving Yourself
 
 You can solve these puzzles by yourself by creating a repo from scratch too. Do the following:
 
@@ -53,4 +82,37 @@ forge init
 forge install git@github.com:OpenZeppelin/openzeppelin-contracts.git
 ```
 
-The EVM puzzles are simple test files, I didn't bother creating contracts for each puzzle there. The real deal is with Ethernaut puzzles.
+Each Ethernaut puzzle is set-up, solved, and verified within its respective test. For each challenge (assuming a `Challenge` contract under `src/Challenge.sol`) a test file will look like the following:
+
+```sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+
+import {Test} from "forge-std/Test.sol";
+import {Challenge} from "~/Challenge.sol";
+
+contract ChallengeTest is Test {
+    Challenge target;
+    address player;
+
+    function setUp() public {
+        player = makeAddr("player");
+        vm.deal(player, 1 ether);
+
+        // TODO: setup
+        Challenge delegate = new Challenge();
+    }
+
+    function attack() private {
+        // TODO: attack
+    }
+
+    function testAttack() public {
+        vm.startPrank(player);
+        attack();
+        vm.stopPrank();
+
+        // TODO: verify
+    }
+}
+```
