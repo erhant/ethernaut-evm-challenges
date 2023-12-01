@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Fallback} from "~/Fallback.sol";
+import {Fallback} from "ethernaut/levels/Fallback.sol";
 
 contract FallbackTest is Test {
     Fallback target;
