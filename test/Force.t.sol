@@ -31,6 +31,7 @@ contract ForceTest is Test {
 
 contract Attacker {
     constructor(address payable _target) payable {
+        // selfdestruct will "forcefully" transfer the money
         selfdestruct(_target);
     }
 }
