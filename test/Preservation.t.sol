@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Preservation, LibraryContract} from "../src/Preservation.sol";
+import {Preservation, LibraryContract} from "ethernaut/levels/Preservation.sol";
 
 contract PreservationTest is Test {
     Preservation target;

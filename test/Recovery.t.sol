@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Recovery, SimpleToken} from "~/Recovery.sol";
+import {Recovery, SimpleToken} from "ethernaut/levels/Recovery.sol";
 
 contract RecoveryTest is Test {
     Recovery target;

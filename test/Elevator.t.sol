@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Elevator, Building} from "~/Elevator.sol";
+import {Elevator, Building} from "ethernaut/levels/Elevator.sol";
 
 contract ElevatorTest is Test {
     Elevator target;

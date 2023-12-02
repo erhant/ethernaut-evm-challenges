@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Delegation, Delegate} from "~/Delegation.sol";
+import {Delegation, Delegate} from "ethernaut/levels/Delegation.sol";
 
 contract DelegationTest is Test {
     Delegation target;

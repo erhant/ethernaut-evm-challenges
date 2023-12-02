@@ -1,5 +1,8 @@
 pragma solidity ^0.5.0;
 
+// NOTE: We do not use this contract per se, but instead use its artifact within our test.
+// Its because this attack is not possible since v6.
+
 /**
  * @dev Contract module which provides a basic access control mechanism, where
  * there is an account (an owner) that can be granted exclusive access to

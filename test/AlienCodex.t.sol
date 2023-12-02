@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-// import {AlienCodex} from "~/AlienCodex.sol";
 
 contract AlienCodexTest is Test {
     AlienCodex target;
@@ -12,7 +11,7 @@ contract AlienCodexTest is Test {
         player = makeAddr("player");
         vm.deal(player, 1 ether);
 
-        // since this is a v0.5.0 specific contract, we should get the bytecode and deploy it via CREATE here,
+        // NOTE: since this is a v0.5.0 specific contract, we should get the bytecode and deploy it via CREATE here,
         // forge will automatically compile it with v0.5.17 and the artifact will be under `out` as shown below
         bytes memory bytecode = abi.encodePacked(vm.getCode("./out/AlienCodex.sol/AlienCodex.json"));
         address addr;

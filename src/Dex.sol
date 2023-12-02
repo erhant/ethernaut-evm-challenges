@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// NOTE: We have edited the following dependencies as you can see below:
 // import "openzeppelin-contracts-08/token/ERC20/IERC20.sol";
-import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
 // import "openzeppelin-contracts-08/token/ERC20/ERC20.sol";
-import "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 // import 'openzeppelin-contracts-08/access/Ownable.sol';
-import "openzeppelin-contracts/contracts/access/Ownable.sol";
+
+import {IERC20} from "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import {ERC20} from "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
+import {Ownable} from "openzeppelin-contracts/contracts/access/Ownable.sol";
 
 contract Dex is Ownable(msg.sender) {
     address public token1;

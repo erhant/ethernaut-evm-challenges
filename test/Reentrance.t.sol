@@ -2,10 +2,10 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Reentrancy} from "~/Reentrancy.sol";
+import {Reentrance} from "~/Reentrance.sol";
 
-contract ReentrancyTest is Test {
-    Reentrancy target;
+contract ReentranceTest is Test {
+    Reentrance target;
     address player;
     Attacker attacker;
 
@@ -17,7 +17,7 @@ contract ReentrancyTest is Test {
         vm.deal(player, playerBalance);
 
         // contract has some donations by the owner at first
-        target = new Reentrancy();
+        target = new Reentrance();
         target.donate{value: contractBalance}(address(this));
     }
 
@@ -41,11 +41,11 @@ contract ReentrancyTest is Test {
 
 contract Attacker {
     address payable public owner;
-    Reentrancy targetContract;
+    Reentrance targetContract;
     uint256 donation;
 
     constructor(address payable _targetAddr) {
-        targetContract = Reentrancy(_targetAddr);
+        targetContract = Reentrance(_targetAddr);
         owner = payable(msg.sender);
     }
 

@@ -7,7 +7,7 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918). Original Ethernaut level source-code can be found [here](https://github.com/OpenZeppelin/ethernaut/tree/master/contracts/contracts/levels).
 
 - [x] Fallback
-- [x] Fallout
+- [x] Fallout<sup>\*</sup>
 - [x] CoinFlip
 - [x] Telephone
 - [x] Token
@@ -15,7 +15,7 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [x] Force
 - [x] Vault
 - [x] King
-- [x] Reentrancy
+- [x] Reentrance<sup>\*</sup>
 - [x] Elevator
 - [x] Privacy
 - [x] Gatekeeper One
@@ -24,17 +24,19 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [x] Preservation
 - [x] Recovery
 - [x] Magic Number
-- [x] Alien Codex
+- [x] Alien Codex<sup>\*</sup>
 - [x] Denial
 - [x] Shop
-- [ ] Dex
-- [ ] Dex Two
-- [ ] Puzzle Wallet
+- [ ] Dex<sup>\*</sup>
+- [ ] Dex Two<sup>\*</sup>
+- [ ] Puzzle Wallet<sup>\*</sup>
 - [ ] Motorbike
 - [ ] Double Entry Point
 - [ ] Good Samaritan
 - [ ] Gatekeeper Three
 - [ ] Switch
+
+Those with a `*` in their name are not imported from Ethernaut, but manually written instead.
 
 ### Solving Yourself
 

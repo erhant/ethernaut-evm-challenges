@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {GatekeeperOne} from "~/GatekeeperOne.sol";
+import {GatekeeperOne} from "ethernaut/levels/GatekeeperOne.sol";
 
 contract GatekeeperOneTest is Test {
     GatekeeperOne target;

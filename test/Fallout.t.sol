@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Fallout} from "~/Fallout.sol";
+import {Fallout} from "~/Fallout.sol"; // Ethernaut's v6 is not compatible
 
 contract FalloutTest is Test {
     Fallout target;

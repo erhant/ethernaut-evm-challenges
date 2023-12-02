@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Shop, Buyer} from "~/Shop.sol";
+import {Shop, Buyer} from "ethernaut/levels/Shop.sol";
 
 contract ShopTest is Test {
     Shop target;

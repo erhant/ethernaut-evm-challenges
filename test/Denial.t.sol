@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Denial} from "~/Denial.sol";
+import {Denial} from "ethernaut/levels/Denial.sol";
 
 contract DenialTest is Test {
     Denial target;

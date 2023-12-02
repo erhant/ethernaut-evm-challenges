@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Vault} from "~/Vault.sol";
+import {Vault} from "ethernaut/levels/Vault.sol";
 
 contract VaultTest is Test {
     Vault target;

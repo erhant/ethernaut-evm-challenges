@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
-import {Force} from "../src/Force.sol";
+import {Force} from "ethernaut/levels/Force.sol";
 
 contract ForceTest is Test {
     Force target;

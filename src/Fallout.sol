@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-// NOTE: Removed SafeMath usage due as we are using later
+// NOTE: Removed SafeMath usage due as we are using a later
 // compiler version that does checked artihmetic by default.
+//
 // As a result `allocate` function uses + instead of `.add` of SafeMath.
 
 contract Fallout {

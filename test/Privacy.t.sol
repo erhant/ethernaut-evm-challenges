@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Privacy} from "~/Privacy.sol";
+import {Privacy} from "ethernaut/levels/Privacy.sol";
 
 contract PrivacyTest is Test {
     Privacy target;

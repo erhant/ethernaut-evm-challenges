@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Reentrancy {
+contract Reentrance {
     mapping(address => uint256) public balances;
 
     function donate(address _to) public payable {
