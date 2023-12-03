@@ -4,19 +4,19 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918). Original Ethernaut level source-code can be found [here](https://github.com/OpenZeppelin/ethernaut/tree/master/contracts/contracts/levels).
+For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918). We try to use the original Ethernaut levels whenever possible, but there are a few exceptions: those with a `*` in their name are not imported from Ethernaut. Instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this that either the attack is no longer valid with the newer versions, or there is a broken import or something.
 
-- [x] Fallback
-- [x] Fallout<sup>\*</sup>
-- [x] CoinFlip
-- [x] Telephone
-- [x] Token
-- [x] Delegation
-- [x] Force
-- [x] Vault
-- [x] King
-- [x] Reentrance<sup>\*</sup>
-- [x] Elevator
+- [x] [Fallback](./docs/Ethernaut.md#1-fallback)
+- [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\*</sup>
+- [x] [CoinFlip](./docs/Ethernaut.md#3-coinflip)
+- [x] [Telephone](./docs/Ethernaut.md#4-telephone)
+- [x] [Token](./docs/Ethernaut.md#5-token)<sup>\*</sup>
+- [x] [Delegation](./docs/Ethernaut.md#6-delegation)
+- [x] [Force](./docs/Ethernaut.md#7-force)
+- [x] [Vault](./docs/Ethernaut.md#8-vault)
+- [x] [King](./docs/Ethernaut.md#9-king)
+- [x] [Reentrance](./docs/Ethernaut.md#10-reentrance)<sup>\*</sup>
+- [x] [Elevator](./docs/Ethernaut.md#11-elevator)
 - [x] Privacy
 - [x] Gatekeeper One
 - [x] Gatekeeper Two
@@ -27,16 +27,14 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [x] Alien Codex<sup>\*</sup>
 - [x] Denial
 - [x] Shop
-- [ ] Dex<sup>\*</sup>
-- [ ] Dex Two<sup>\*</sup>
+- [x] Dex<sup>\*</sup>
+- [x] Dex Two<sup>\*</sup>
 - [ ] Puzzle Wallet<sup>\*</sup>
 - [ ] Motorbike
 - [ ] Double Entry Point
 - [ ] Good Samaritan
 - [ ] Gatekeeper Three
 - [ ] Switch
-
-Those with a `*` in their name are not imported from Ethernaut; instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this may be due to the attack no longer being valid, or due to a broken import.
 
 ### Solving Yourself
 

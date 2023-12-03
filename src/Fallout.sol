@@ -1,10 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.0;
 
 // NOTE: Removed SafeMath usage due as we are using a later
 // compiler version that does checked artihmetic by default.
 //
 // As a result `allocate` function uses + instead of `.add` of SafeMath.
+//
+// Also note that up to solc v0.4.21, constructor can also be defined by name of the contract.
+// People use `constructor` as the constructor itself, but this challenge is more
+// about that older way of writing the constructor.
 
 contract Fallout {
     mapping(address => uint256) allocations;

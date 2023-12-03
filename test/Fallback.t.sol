@@ -21,10 +21,10 @@ contract FallbackTest is Test {
 
         // fallback
         (bool ok,) = address(target).call{value: 1}("");
-        assertTrue(ok);
+        require(ok, "call failed");
 
         // confirm ownership for the next step
-        assertEq(target.owner(), address(player));
+        require(target.owner() == address(player), "must be owner");
 
         // withdraw
         target.withdraw();

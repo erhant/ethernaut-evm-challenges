@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Test, console} from "forge-std/Test.sol";
 import {CoinFlip} from "ethernaut/levels/Coinflip.sol";
 
-contract CoinflipTest is Test {
+contract CoinFlipTest is Test {
     CoinFlip target;
     address player;
 
