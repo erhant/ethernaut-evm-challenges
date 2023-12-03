@@ -1,6 +1,10 @@
 # Ethernaut
 
-[Ethernaut](https://ethernaut.openzeppelin.com) is a Web3/Solidity based wargame inspired by [overthewire.org](https://overthewire.org/wargames/), played in the Ethereum Virtual Machine. Each level is a smart contract that needs to be 'hacked'. The game is 100% open source and all levels are contributions made by other players.
+> [!NOTE]
+>
+> [Ethernaut](https://ethernaut.openzeppelin.com) is a Web3/Solidity based wargame inspired by [overthewire.org](https://overthewire.org/wargames/), played in the Ethereum Virtual Machine. Each level is a smart contract that needs to be 'hacked'. The game is 100% open source and all levels are contributions made by other players.
+
+Setup, solutions, and verifications are written within the respective test files.
 
 ## 1. Fallback
 
@@ -45,3 +49,35 @@ The classic bug that still haunts the Web3 scene! We re-enter the function from 
 ## 11. Elevator
 
 `isLastFloor` is a pretty relaxed function, we can return whatever we want whenever we want.
+
+## 12. Privacy
+
+Similar to [Vault](#8-vault), just read the correct storage slot and `unlock`.
+
+## 13. Gatekeeper One
+
+TODO
+
+## 14. Gatekeeper Two
+
+TODO
+
+## 15. Naught Coin
+
+TODO
+
+## 16. Preservation
+
+TODO
+
+## 17. Recovery
+
+TODO
+
+## 18. Naught Coin
+
+TODO
+
+## 19. Alien Codex
+
+TODO

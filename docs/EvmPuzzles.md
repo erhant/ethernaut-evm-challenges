@@ -1,6 +1,10 @@
 # EVM Puzzles
 
-[EVM Puzzles](https://github.com/fvictorio/evm-puzzles/) are a collection of puzzles by [Franco Victorio](https://github.com/fvictorio). In each puzzle, the objective is to have the code `STOP`, rather than `REVERT`. You basically have to get to the end!
+> [!NOTE]
+>
+> [EVM Puzzles](https://github.com/fvictorio/evm-puzzles/) are a collection of puzzles by [Franco Victorio](https://github.com/fvictorio). In each puzzle, the objective is to have the code `STOP`, rather than `REVERT`. You basically have to get to the end!
+
+Solutions are written within the test file.
 
 ## Puzzle 1
 

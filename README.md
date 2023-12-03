@@ -17,14 +17,14 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [x] [King](./docs/Ethernaut.md#9-king)
 - [x] [Reentrance](./docs/Ethernaut.md#10-reentrance)<sup>\*</sup>
 - [x] [Elevator](./docs/Ethernaut.md#11-elevator)
-- [x] Privacy
-- [x] Gatekeeper One
-- [x] Gatekeeper Two
-- [x] Naught Coin
-- [x] Preservation
-- [x] Recovery
-- [x] Magic Number
-- [x] Alien Codex<sup>\*</sup>
+- [x] [Privacy](./docs/Ethernaut.md#12-privacy)
+- [x] [Gatekeeper One](./docs/Ethernaut.md#13-gatekeeper-one)
+- [x] [Gatekeeper Two](./docs/Ethernaut.md#14-gatekeeper-two)
+- [x] [Naught Coin](./docs/Ethernaut.md#15-naught-coin)
+- [x] [Preservation](./docs/Ethernaut.md#16-preservation)
+- [x] [Recovery](./docs/Ethernaut.md#17-recovery)
+- [x] [Magic Number](./docs/Ethernaut.md#18-naught-coin)
+- [x] [Alien Codex](./docs/Ethernaut.md#19-alien-codex)<sup>\*</sup>
 - [x] Denial
 - [x] Shop
 - [x] Dex<sup>\*</sup>
