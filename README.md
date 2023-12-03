@@ -36,7 +36,7 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [ ] Gatekeeper Three
 - [ ] Switch
 
-Those with a `*` in their name are not imported from Ethernaut, but manually written instead.
+Those with a `*` in their name are not imported from Ethernaut; instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this may be due to the attack no longer being valid, or due to a broken import.
 
 ### Solving Yourself
 

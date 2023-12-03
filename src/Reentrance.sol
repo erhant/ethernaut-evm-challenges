@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// NOTE: Original challenge used v6 with SafeMath. We have removed SafeMath
+// and updated the version to v8.
+
 contract Reentrance {
     mapping(address => uint256) public balances;
 
