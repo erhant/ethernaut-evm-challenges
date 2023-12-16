@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// NOTE: Removed SafeMath and added unchecked within the `transfer` function.
+// NOTE: We have removed SafeMath and added `unchecked` within the `transfer` function.
 
 contract Token {
     mapping(address => uint256) balances;

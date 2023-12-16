@@ -81,3 +81,19 @@ TODO
 ## 19. Alien Codex
 
 TODO
+
+## 20. Denial
+
+TODO
+
+## 21. Shop
+
+TODO
+
+## 22. Dex
+
+TODO
+
+## 23. Dex Two
+
+TODO

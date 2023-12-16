@@ -4,7 +4,7 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918). We try to use the original Ethernaut levels whenever possible, but there are a few exceptions: those with a `*` in their name are not imported from Ethernaut. Instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this that either the attack is no longer valid with the newer versions, or there is a broken import or something.
+We try to use the original Ethernaut levels whenever possible, but there are a few exceptions: those with a `*` in their name are not imported from Ethernaut. Instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this that either the attack is no longer valid with the newer versions, or there is a broken import or something.
 
 - [x] [Fallback](./docs/Ethernaut.md#1-fallback)
 - [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\*</sup>
@@ -25,10 +25,10 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [x] [Recovery](./docs/Ethernaut.md#17-recovery)
 - [x] [Magic Number](./docs/Ethernaut.md#18-naught-coin)
 - [x] [Alien Codex](./docs/Ethernaut.md#19-alien-codex)<sup>\*</sup>
-- [x] Denial
-- [x] Shop
-- [x] Dex<sup>\*</sup>
-- [x] Dex Two<sup>\*</sup>
+- [x] [Denial](./docs/Ethernaut.md#20-denial)
+- [x] [Shop](./docs/Ethernaut.md#21-shop)
+- [x] [Dex](./docs/Ethernaut.md#22-dex)<sup>\*</sup>
+- [x] [Dex Two](./docs/Ethernaut.md#23-dex-two)<sup>\*</sup>
 - [ ] Puzzle Wallet<sup>\*</sup>
 - [ ] Motorbike
 - [ ] Double Entry Point
@@ -36,60 +36,11 @@ For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918)
 - [ ] Gatekeeper Three
 - [ ] Switch
 
-### Solving Yourself
-
-You can solve these puzzles by yourself by creating a repo from scratch too. Do the following:
-
-```sh
-# create a folder
-mkdir <your-project>
-cd <your-project>
-
-# initialize foundry
-forge init
-
-# install OpenZeppelin dependency
-forge install git@github.com:OpenZeppelin/openzeppelin-contracts.git
-```
-
-Each Ethernaut puzzle is set-up, solved, and verified within its respective test. For each challenge (assuming a `Challenge` contract under `src/Challenge.sol`) a test file will look like the following:
-
-```sol
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
-
-import {Test} from "forge-std/Test.sol";
-import {Challenge} from "~/Challenge.sol";
-
-contract ChallengeTest is Test {
-    Challenge target;
-    address player;
-
-    function setUp() public {
-        player = makeAddr("player");
-        vm.deal(player, 1 ether);
-
-        // TODO: setup
-        Challenge delegate = new Challenge();
-    }
-
-    function attack() private {
-        // TODO: attack
-    }
-
-    function testAttack() public {
-        vm.startPrank(player);
-        attack();
-        vm.stopPrank();
-
-        // TODO: verify
-    }
-}
-```
+> [!TIP]
+>
+> For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918).
 
 ## [EVM Puzzles](https://github.com/fvictorio/evm-puzzles/)
-
-For my old write-ups see [here](https://dev.to/erhant/evm-puzzles-walkthrough-471a).
 
 - [x] [Puzzle 1](./docs/EvmPuzzles.md#puzzle-1)
 - [x] [Puzzle 2](./docs/EvmPuzzles.md#puzzle-2)
@@ -102,9 +53,11 @@ For my old write-ups see [here](https://dev.to/erhant/evm-puzzles-walkthrough-47
 - [x] [Puzzle 9](./docs/EvmPuzzles.md#puzzle-9)
 - [x] [Puzzle 10](./docs/EvmPuzzles.md#puzzle-10)
 
-## [More EVM Puzzles](https://github.com/daltyboy11/more-evm-puzzles)
+> [!TIP]
+>
+> For my old write-ups see [here](https://dev.to/erhant/evm-puzzles-walkthrough-471a).
 
-For my old write-ups see [here](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil).
+## [More EVM Puzzles](https://github.com/daltyboy11/more-evm-puzzles)
 
 - [x] [Puzzle 1](./docs/MoreEvmPuzzles.md#puzzle-1)
 - [x] [Puzzle 2](./docs/MoreEvmPuzzles.md#puzzle-2)
@@ -116,3 +69,7 @@ For my old write-ups see [here](https://dev.to/erhant/more-evm-puzzles-walkthrou
 - [x] [Puzzle 8](./docs/MoreEvmPuzzles.md#puzzle-8)
 - [x] [Puzzle 9](./docs/MoreEvmPuzzles.md#puzzle-9)
 - [x] [Puzzle 10](./docs/MoreEvmPuzzles.md#puzzle-10)
+
+> [!TIP]
+>
+> For my old write-ups see [here](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil).
