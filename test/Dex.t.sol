@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Dex, SwappableToken} from "~/Dex.sol";
+import {Dex, SwappableToken} from "ethernaut/levels/Dex.sol";
 
 contract DexTest is Test {
     Dex target;

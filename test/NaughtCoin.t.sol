@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {NaughtCoin} from "~/NaughtCoin.sol";
+import {NaughtCoin} from "ethernaut/levels/NaughtCoin.sol";
 
 contract NaughtCoinTest is Test {
     NaughtCoin target;

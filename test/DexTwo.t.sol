@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {DexTwo, SwappableTokenTwo} from "~/DexTwo.sol";
+import {DexTwo, SwappableTokenTwo} from "ethernaut/levels/DexTwo.sol";
 
 // NOTE: This attack uses dummy tokens with a specific supply to trick the DEX.
 // However, you can also create your own ERC20 token contract that overrides `balanceOf`

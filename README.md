@@ -4,18 +4,18 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-We try to use the original Ethernaut levels whenever possible, but there are a few exceptions: those with a `*` in their name are not imported from Ethernaut. Instead, their slightly changed versions are used (you can find them under [src](./src/)) although the attack is still the same. The reason for doing this that either the attack is no longer valid with the newer versions, or there is a broken import or something.
+We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below.
 
 - [x] [Fallback](./docs/Ethernaut.md#1-fallback)
-- [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\*</sup>
+- [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\* uses v0.8 instead of v0.6</sup>
 - [x] [CoinFlip](./docs/Ethernaut.md#3-coinflip)
 - [x] [Telephone](./docs/Ethernaut.md#4-telephone)
-- [x] [Token](./docs/Ethernaut.md#5-token)<sup>\*</sup>
+- [x] [Token](./docs/Ethernaut.md#5-token)<sup>\* using v0.8 instead of v0.6</sup>
 - [x] [Delegation](./docs/Ethernaut.md#6-delegation)
 - [x] [Force](./docs/Ethernaut.md#7-force)
 - [x] [Vault](./docs/Ethernaut.md#8-vault)
 - [x] [King](./docs/Ethernaut.md#9-king)
-- [x] [Reentrance](./docs/Ethernaut.md#10-reentrance)<sup>\*</sup>
+- [x] [Reentrance](./docs/Ethernaut.md#10-reentrance)<sup>\* using v0.8 instead of v0.6</sup>
 - [x] [Elevator](./docs/Ethernaut.md#11-elevator)
 - [x] [Privacy](./docs/Ethernaut.md#12-privacy)
 - [x] [Gatekeeper One](./docs/Ethernaut.md#13-gatekeeper-one)
@@ -24,11 +24,11 @@ We try to use the original Ethernaut levels whenever possible, but there are a f
 - [x] [Preservation](./docs/Ethernaut.md#16-preservation)
 - [x] [Recovery](./docs/Ethernaut.md#17-recovery)
 - [x] [Magic Number](./docs/Ethernaut.md#18-naught-coin)
-- [x] [Alien Codex](./docs/Ethernaut.md#19-alien-codex)<sup>\*</sup>
+- [x] [Alien Codex](./docs/Ethernaut.md#19-alien-codex)<sup>\* requires v0.5, so we deploy bytecode via <code>CREATE</code></sup>
 - [x] [Denial](./docs/Ethernaut.md#20-denial)
 - [x] [Shop](./docs/Ethernaut.md#21-shop)
-- [x] [Dex](./docs/Ethernaut.md#22-dex)<sup>\*</sup>
-- [x] [Dex Two](./docs/Ethernaut.md#23-dex-two)<sup>\*</sup>
+- [x] [Dex](./docs/Ethernaut.md#22-dex)
+- [x] [Dex Two](./docs/Ethernaut.md#23-dex-two)
 - [ ] Puzzle Wallet<sup>\*</sup>
 - [ ] Motorbike
 - [ ] Double Entry Point
