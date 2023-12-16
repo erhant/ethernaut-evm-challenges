@@ -7,3 +7,6 @@
 [submodule "lib/ethernaut"]
 	path = lib/ethernaut
 	url = https://github.com/OpenZeppelin/ethernaut
+[submodule "lib/openzeppelin-contracts-08"]
+	path = lib/openzeppelin-contracts-08
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
