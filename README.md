@@ -4,7 +4,13 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below.
+We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below. For setup, you should do:
+
+```sh
+forge install OpenZeppelin/ethernaut
+forge install OpenZeppelin/openzeppelin-contracts # TODO: maybe map to 08 directly?
+forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
+```
 
 - [x] [Fallback](./docs/Ethernaut.md#1-fallback)
 - [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\* uses v0.8 instead of v0.6</sup>
@@ -29,16 +35,16 @@ We try to use the original Ethernaut levels whenever possible, but there are a f
 - [x] [Shop](./docs/Ethernaut.md#21-shop)
 - [x] [Dex](./docs/Ethernaut.md#22-dex)
 - [x] [Dex Two](./docs/Ethernaut.md#23-dex-two)
-- [ ] Puzzle Wallet<sup>\*</sup>
-- [ ] Motorbike
-- [ ] Double Entry Point
-- [ ] Good Samaritan
+- [x] [Puzzle Wallet](./docs/Ethernaut.md#24-puzzle-wallet)
+- [x] [Motorbike](./docs/Ethernaut.md#25-motorbike)<sup>\* using v0.8 instead of v0.7 or below</sup>
+- [ ] [Double Entry Point](./docs/Ethernaut.md#26-double-entry-point)
+- [ ] [Good Samaritan](./docs/Ethernaut.md#27-good-samaritan)
 - [ ] Gatekeeper Three
 - [ ] Switch
 
 > [!TIP]
 >
-> For my old write-ups via Hardhat, see [here](https://dev.to/erhant/series/18918).
+> For my old write-ups using Hardhat, see [here](https://dev.to/erhant/series/18918).
 
 ## [EVM Puzzles](https://github.com/fvictorio/evm-puzzles/)
 

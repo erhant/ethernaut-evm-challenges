@@ -97,3 +97,23 @@ TODO
 ## 23. Dex Two
 
 TODO
+
+## 24. Puzzle Wallet
+
+TODO
+
+## 25. Motorbike
+
+TODO
+
+## 26. Double Entry Point
+
+TODO
+
+## 27. Good Samaritan
+
+TODO
+
+## 28. Gatekeeper Three
+
+TODO
