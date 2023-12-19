@@ -7,8 +7,10 @@ Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://bo
 We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below. For setup, you should do:
 
 ```sh
+# Ethernaut levels are imported from the original repo
 forge install OpenZeppelin/ethernaut
-forge install OpenZeppelin/openzeppelin-contracts # TODO: maybe map to 08 directly?
+
+# Some levels use openzeppelin-contracts-08 as below
 forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
 ```
 
@@ -37,10 +39,10 @@ forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7
 - [x] [Dex Two](./docs/Ethernaut.md#23-dex-two)
 - [x] [Puzzle Wallet](./docs/Ethernaut.md#24-puzzle-wallet)
 - [x] [Motorbike](./docs/Ethernaut.md#25-motorbike)<sup>\* using v0.8 instead of v0.7 or below</sup>
-- [ ] [Double Entry Point](./docs/Ethernaut.md#26-double-entry-point)
-- [ ] [Good Samaritan](./docs/Ethernaut.md#27-good-samaritan)
-- [ ] Gatekeeper Three
-- [ ] Switch
+- [x] [Double Entry Point](./docs/Ethernaut.md#26-double-entry-point)
+- [x] [Good Samaritan](./docs/Ethernaut.md#27-good-samaritan)
+- [x] [Gatekeeper Three](./docs/Ethernaut.md#28-gatekeeper-three)
+- [x] [Switch](./docs/Ethernaut.md#29-switch)
 
 > [!TIP]
 >

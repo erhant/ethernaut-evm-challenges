@@ -25,11 +25,11 @@ contract DoubleEntryPointTest is Test {
         CryptoVault vault = new CryptoVault(player);
 
         // create token & set it as underlying token
-        DoubleEntryPoint newToken = new DoubleEntryPoint(address(oldToken), address(vault), address(forta), player);
-        vault.setUnderlying(address(newToken));
+        target = new DoubleEntryPoint(address(oldToken), address(vault), address(forta), player);
+        vault.setUnderlying(address(target));
 
         // give legacy support
-        oldToken.delegateToNewContract(DelegateERC20(address(newToken)));
+        oldToken.delegateToNewContract(DelegateERC20(address(target)));
 
         // mint some legacy tokens to the vault
         oldToken.mint(address(vault), 100 ether);
