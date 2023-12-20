@@ -11,6 +11,7 @@ import {
     IDetectionBot,
     IERC20
 } from "ethernaut/levels/DoubleEntryPoint.sol";
+import {DetectionBot} from "~/helpers/DoubleEntryPoint.sol";
 
 contract DoubleEntryPointTest is Test {
     DoubleEntryPoint target;
@@ -50,11 +51,11 @@ contract DoubleEntryPointTest is Test {
             address(target.forta().usersDetectionBots(player)), address(0), "user must have set a detection bot"
         );
 
-        // (bool ok, bytes memory data) = trySweep(CryptoVault(target.cryptoVault()), target);
-        // assertFalse(ok, "sweep should have failed");
+        (bool ok, bytes memory data) = trySweep(CryptoVault(target.cryptoVault()), target);
+        assertFalse(ok, "sweep should have failed");
 
-        // bool prevented = abi.decode(data, (bool));
-        // assertTrue(prevented, "bot should have detected it");
+        bool prevented = abi.decode(data, (bool));
+        assertTrue(prevented, "bot should have detected it");
     }
 
     function trySweep(CryptoVault cryptoVault, DoubleEntryPoint instance) private returns (bool, bytes memory) {
@@ -62,27 +63,6 @@ contract DoubleEntryPointTest is Test {
             return (true, abi.encode(false));
         } catch {
             return (false, abi.encode(instance.balanceOf(instance.cryptoVault()) > 0));
-        }
-    }
-}
-
-contract DetectionBot is IDetectionBot {
-    address public cryptoVaultAddress;
-
-    constructor(address _cryptoVaultAddress) {
-        cryptoVaultAddress = _cryptoVaultAddress;
-    }
-
-    function handleTransaction(address user, bytes calldata /* msgData */ ) external override {
-        // extract sender from calldata
-        address origSender;
-        assembly {
-            origSender := calldataload(0xa8)
-        }
-
-        // raise alert only if the msg.sender is CryptoVault contract
-        if (origSender == cryptoVaultAddress) {
-            Forta(msg.sender).raiseAlert(user);
         }
     }
 }

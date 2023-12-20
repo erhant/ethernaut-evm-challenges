@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
 import {Force} from "ethernaut/levels/Force.sol";
+import {Attacker} from "~/helpers/Force.sol";
 
 contract ForceTest is Test {
     Force target;
@@ -26,12 +27,5 @@ contract ForceTest is Test {
         vm.stopPrank();
 
         assertGt(address(target).balance, 0, "balance should be non-zero");
-    }
-}
-
-contract Attacker {
-    constructor(address payable _target) payable {
-        // selfdestruct will "forcefully" transfer the money
-        selfdestruct(_target);
     }
 }

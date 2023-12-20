@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Fallout} from "~/Fallout.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
+import {Fallout} from "~/Fallout.sol";
 
 contract Check is CheckScript("FALLOUT") {}
 

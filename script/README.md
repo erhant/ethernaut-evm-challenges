@@ -36,9 +36,9 @@ Here is what a script looks like for some challenge called `LevelName`:
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {LevelName} from "ethernaut/levels/LevelName.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
+import {LevelName} from "ethernaut/levels/LevelName.sol";
 
 contract Check is CheckScript("LEVEL_NAME") {}
 
@@ -55,4 +55,4 @@ contract Solve is SolveScript("LEVEL_NAME") {
 }
 ```
 
-Here, you just have to write the attack within `attack` function, and it should "just work".
+Here, you just have to write the attack within `attack` function, and it should "just work". The `SolveScript` also exposes a variable called `player` that holds your address as well.

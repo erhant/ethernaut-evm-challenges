@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Fallback} from "ethernaut/levels/Fallback.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
+import {Fallback} from "ethernaut/levels/Fallback.sol";
 
 contract Check is CheckScript("FALLBACK") {}
 

