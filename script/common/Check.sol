@@ -4,8 +4,14 @@ pragma solidity ^0.8.13;
 import {Script, console2} from "forge-std/Script.sol";
 import {Ethernaut} from "ethernaut/Ethernaut.sol";
 
+/**
+ * @title Check Script
+ * @author erhant
+ * @notice This contract will check if a given instance is solved or not.
+ * - If it is solved, it will print the player name.
+ */
 contract CheckScript is Script {
-    Ethernaut ethernaut = Ethernaut(vm.envAddress("ADDR_ETHERNAUT"));
+    Ethernaut ethernaut = Ethernaut(vm.envAddress("ETHERNAUT"));
     address payable instance;
 
     constructor(string memory name) {

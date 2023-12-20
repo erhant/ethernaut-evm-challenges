@@ -1,11 +1,33 @@
 # Ethernaut & EVM Puzzles Solutions
 
-Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://book.getfoundry.sh/), migrated from my previous [solutions with Hardhat](https://github.com/erhant/solidity-ctfs).
+Solutions to Ethernaut, EVM puzzles and More EVM Puzzles in [Foundry](https://book.getfoundry.sh/), migrated & improved from my previous [solutions with Hardhat](https://github.com/erhant/solidity-ctfs). All solutions can be found under the [test](./test/) folder, within the tests for each challenge.
+
+To get started:
+
+```sh
+forge install
+```
+
+Then, see the solutions in action via:
+
+```sh
+forge test
+```
+
+> [!NOTE]
+>
+> We are making use of the following libraries for Ethernaut, shown via their installation commands:
+>
+> ```sh
+> forge install OpenZeppelin/ethernaut
+> forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
+> ```
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below.
+We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below. We also provide scripts to automatically solve each problem, see [script](./script/) folder for details.
 
+- [x] [Hello Ethernaut](./docs/Ethernaut.md#0-hello-ethernaut)
 - [x] [Fallback](./docs/Ethernaut.md#1-fallback)
 - [x] [Fallout](./docs/Ethernaut.md#2-fallout)<sup>\* uses v0.8 instead of v0.6</sup>
 - [x] [CoinFlip](./docs/Ethernaut.md#3-coinflip)
@@ -40,30 +62,6 @@ We try to use the original Ethernaut levels whenever possible, but there are a f
 >
 > For my old write-ups using Hardhat, see [here](https://dev.to/erhant/series/18918).
 
-### Setup
-
-For setup, you should do:
-
-```sh
-# Ethernaut levels are imported from the original repo
-forge install OpenZeppelin/ethernaut
-
-# Some levels use openzeppelin-contracts-08 as below
-forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
-```
-
-### Scripts
-
-We have scripts that can solve the puzzle & check if they are solved or not. First, write your credentials within an `.env` file, as shown in the `.env.example`. Then, you can scripts such as:
-
-```sh
-# Check if the level is solved
-source .env && forge script ./scripts/<Level>.s.sol:Check -f=$RPC_URL
-
-# Solve level
-source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY
-```
-
 ## [EVM Puzzles](https://github.com/fvictorio/evm-puzzles/)
 
 - [x] [Puzzle 1](./docs/EvmPuzzles.md#puzzle-1)
@@ -79,7 +77,7 @@ source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-
 
 > [!TIP]
 >
-> For my old write-ups see [here](https://dev.to/erhant/evm-puzzles-walkthrough-471a).
+> For my write-ups see [here](https://dev.to/erhant/evm-puzzles-walkthrough-471a).
 
 ## [More EVM Puzzles](https://github.com/daltyboy11/more-evm-puzzles)
 
@@ -96,4 +94,4 @@ source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-
 
 > [!TIP]
 >
-> For my old write-ups see [here](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil).
+> For my write-ups see [here](https://dev.to/erhant/more-evm-puzzles-walkthrough-4lil).
