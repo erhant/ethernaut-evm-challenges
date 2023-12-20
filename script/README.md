@@ -12,13 +12,13 @@ We have a script for each Ethernaut level that can check if it is solved, or act
 
 First, write your credentials within an `.env` file, as shown in the `.env.example`. Then, on the Ethernaut website for some challenge, get a new instance and keep note of the level & instance address.
 
-You can run scripts as shown below, with `<Level>` corresponding to the level name as it appears in the file name:
+You can run scripts as shown below, with `<Level>` corresponding to the level name as it appears in the file name. These scripts will run the attack on actual contracts on the blockchain.
 
 ```sh
-# Check if the level is solved
+# Check if the instance is solved
 source .env && forge script ./scripts/<Level>.s.sol:Check -f=$RPC_URL
 
-# Solve level
+# Solve & submit instance
 source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY
 ```
 
@@ -30,14 +30,13 @@ source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-
 
 ## Writing a Script
 
-Here is what a script looks like:
+Here is what a script looks like for some challenge called `LevelName`:
 
-```sol
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Script, console2} from "forge-std/Script.sol";
-import {LevelName} from "ethernaut/levels/LevelName.sol"; // import the level
+import {LevelName} from "ethernaut/levels/LevelName.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
 

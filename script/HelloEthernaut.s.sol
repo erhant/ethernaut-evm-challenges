@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {Script, console2} from "forge-std/Script.sol";
 import {Instance} from "ethernaut/levels/Instance.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
