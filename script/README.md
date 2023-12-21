@@ -50,7 +50,7 @@ contract Solve is SolveScript("LEVEL_NAME") {
     }
 
     function attack() public override {
-        // commence your attack
+        // the attack code within the test can be copy-pasted here!
     }
 }
 ```

@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {GatekeeperTwo} from "ethernaut/levels/GatekeeperTwo.sol";
+import {Attacker} from "~/helpers/GatekeeperTwo.sol";
 
 contract GatekeeperTwoTest is Test {
     GatekeeperTwo target;
@@ -25,15 +26,5 @@ contract GatekeeperTwoTest is Test {
         vm.stopPrank();
 
         assertEq(target.entrant(), player, "player must be the entrant");
-    }
-}
-
-contract Attacker {
-    address owner;
-
-    constructor(GatekeeperTwo target) {
-        // gets past the third gate, the hash of address will be canceled due to XOR
-        bytes8 key = bytes8(type(uint64).max ^ uint64(bytes8(keccak256(abi.encodePacked(address(this))))));
-        target.enter(key);
     }
 }

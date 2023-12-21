@@ -4,6 +4,8 @@
 >
 > [Ethernaut](https://ethernaut.openzeppelin.com) is a Web3/Solidity based wargame inspired by [overthewire.org](https://overthewire.org/wargames/), played in the Ethereum Virtual Machine. Each level is a smart contract that needs to be 'hacked'. The game is 100% open source and all levels are contributions made by other players.
 
+The descriptions here are extremely-summarized!
+
 ## 0. Hello Ethernaut
 
 As seen by the `password` variable, the password is `ethernaut0` and we just need to pass it into the the `authenticate` function.
@@ -46,7 +48,7 @@ When a king is updated, the existing funds are transferred back to the previous 
 
 ## 10. Reentrance
 
-The classic bug that still haunts the Web3 scene! We re-enter the function from within the `receive` of an attacker contract.
+The classic exploit that still haunts the Web3 scene; we re-enter the function from within the `receive` of an attacker contract.
 
 ## 11. Elevator
 

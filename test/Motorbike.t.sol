@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {Motorbike, Engine, Address} from "~/Motorbike.sol";
+import {Attacker} from "~/helpers/Motorbike.sol";
 
 contract MotorbikeTest is Test {
     Motorbike target;
@@ -42,11 +43,5 @@ contract MotorbikeTest is Test {
         // see: https://github.com/foundry-rs/foundry/issues/1543
 
         assertFalse(Address.isContract(address(engine)), "engine must be self-destructed");
-    }
-}
-
-contract Attacker {
-    function pwn() external {
-        selfdestruct(payable(0));
     }
 }
