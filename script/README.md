@@ -28,6 +28,24 @@ source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-
 >
 > If things go right, you should see a tick-mark on Ethernaut website with the same wallet, meaning that your submitted solution was accepted!
 
+### Edge-Cases
+
+In the CoinFlip level, we must deploy an attacker contract first and then call `flip()` on it on 10 different blocks. For this reason, we must run the scripts as follows:
+
+```sh
+# (1) deploy attacker
+source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="deploy()" --broadcast
+
+# (2) save attacker address to .env as:
+ATKR_COINFLIP=0x1234 # attacker address
+
+# (3) attack (do this 10 times)
+source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="flip()" --broadcast
+
+# (4) run the script as usual to submit the instance
+source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY --broadcast
+```
+
 ## Writing a Script
 
 Here is what a script looks like for some challenge called `LevelName`:

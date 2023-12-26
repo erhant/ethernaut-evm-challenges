@@ -17,7 +17,7 @@ contract ElevatorTest is Test {
     }
 
     function attack() private {
-        Attacker attacker = new Attacker(address(target));
+        Attacker attacker = new Attacker(target);
         attacker.goTo(0); // any floor number should work
     }
 

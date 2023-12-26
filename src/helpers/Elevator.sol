@@ -7,8 +7,8 @@ contract Attacker is Building {
     Elevator elevator;
     bool isCalled = false;
 
-    constructor(address _elevator) {
-        elevator = Elevator(_elevator);
+    constructor(Elevator _elevator) {
+        elevator = _elevator;
     }
 
     // TODO: write a really gas efficient code for this

@@ -24,7 +24,7 @@ contract KingTest is Test {
 
     function attack() private {
         attacker = new Attacker(address(target));
-        attacker.attack{value: 5 ether}();
+        attacker.attack{value: target.prize()}();
     }
 
     function testAttack() public {

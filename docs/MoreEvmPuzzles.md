@@ -337,8 +337,6 @@ In the first, we have a `CALLVALUE - 0x01 == 0x00` check. If true, we go to line
 
 Looking at these together, we must be looping for a while so that the gas spent is `0xA6` when that check happens. `0xA6 = 100 * 16 + 6 = 166`. A callvalue of 4 does the trick.
 
-<!-- TODO: calculate gas -->
-
 ## Puzzle 8
 
 ```js
