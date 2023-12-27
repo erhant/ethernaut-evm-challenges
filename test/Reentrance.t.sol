@@ -24,7 +24,7 @@ contract ReentranceTest is Test {
 
     function attack() private {
         attacker = new Attacker(payable(target));
-        attacker.attack{value: address(target).balance / 2}();
+        attacker.attack{value: playerBalance}();
         attacker.reap();
     }
 

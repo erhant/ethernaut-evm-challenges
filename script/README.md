@@ -28,7 +28,7 @@ source .env && forge script ./scripts/<Level>.s.sol:Solve -f=$RPC_URL --private-
 >
 > If things go right, you should see a tick-mark on Ethernaut website with the same wallet, meaning that your submitted solution was accepted!
 
-### Edge-Cases
+### Edge Cases
 
 In the CoinFlip level, we must deploy an attacker contract first and then call `flip()` on it on 10 different blocks. For this reason, we must run the scripts as follows:
 

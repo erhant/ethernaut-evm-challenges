@@ -34,6 +34,7 @@ contract Solve is SolveScript("COINFLIP") {
         vm.stopBroadcast();
     }
 
+    // finally run the script as usual to submit instance
     function attack() public override {
         // do nothing
     }
