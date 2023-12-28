@@ -40,23 +40,23 @@ We try to use the original Ethernaut levels whenever possible, but there are a f
 - [x] [Reentrance](./script/Reentrance.s.sol)<sup>\* using v0.8 instead of v0.6</sup>
 - [x] [Elevator](./script/Elevator.s.sol)
 - [x] [Privacy](./script/Privacy.s.sol)
-- [x] [Gatekeeper One](-)
-- [x] [Gatekeeper Two](-)
-- [x] [Naught Coin](+)
-- [x] [Preservation](-)
-- [x] [Recovery](-)
-- [x] [Magic Number](+)
-- [x] [Alien Codex](-)<sup>\* requires v0.5, so we deploy bytecode via <code>CREATE</code></sup>
-- [x] [Denial](+)
-- [x] [Shop](+)
-- [x] [Dex](-)
-- [x] [Dex Two](-)
+- [x] [Gatekeeper One](./script/GatekeeperOne.s.sol)
+- [x] [Gatekeeper Two](./script/GatekeeperTwo.s.sol)
+- [x] [Naught Coin](./script/NaughtCoin.s.sol)
+- [x] [Preservation](./script/Preservation.s.sol)
+- [x] [Recovery](./script/Recovery.s.sol)
+- [x] [Magic Number](./script/MagicNum.s.sol)
+- [x] [Alien Codex](./script/AlienCodex.s.sol)<sup>\* requires v0.5, so we deploy bytecode via <code>CREATE</code></sup>
+- [x] [Denial](./script/Denial.s.sol)
+- [x] [Shop](./script/Shop.s.sol)
+- [x] [Dex](./script/Dex.s.sol)
+- [x] [Dex Two](./script/DexTwo.s.sol)
 - [x] [Puzzle Wallet](-)
 - [x] [Motorbike](-)<sup>\* using v0.8 instead of v0.7 or below</sup>
-- [x] [Double Entry Point](-)
-- [x] [Good Samaritan](-)
-- [x] [Gatekeeper Three](-)
-- [x] [Switch](+)
+- [x] [Double Entry Point](./script/DoubleEntryPoint.s.sol)
+- [x] [Good Samaritan](./script/GoodSamaritan.s.sol)
+- [x] [Gatekeeper Three](./script/GatekeeperThree.s.sol)
+- [x] [Switch](./script/Switch.s.sol)
 
 > [!TIP]
 >

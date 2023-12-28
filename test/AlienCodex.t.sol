@@ -2,9 +2,10 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
+import {IAlienCodex} from "~/helpers/AlienCodex.sol";
 
 contract AlienCodexTest is Test {
-    AlienCodex target;
+    IAlienCodex target;
     address player;
 
     function setUp() public {
@@ -18,7 +19,7 @@ contract AlienCodexTest is Test {
         assembly {
             addr := create(0, add(bytecode, 0x20), mload(bytecode))
         }
-        target = AlienCodex(addr);
+        target = IAlienCodex(addr);
     }
 
     function attack() private {
@@ -41,14 +42,4 @@ contract AlienCodexTest is Test {
 
         assertEq(target.owner(), player, "player must be the owner");
     }
-}
-
-interface AlienCodex {
-    function owner() external view returns (address);
-
-    function makeContact() external;
-
-    function retract() external;
-
-    function revise(uint256 i, bytes32 _content) external;
 }

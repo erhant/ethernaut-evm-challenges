@@ -22,7 +22,7 @@ contract SolveScript is Script {
 
     constructor(string memory name) {
         instance = payable(vm.envAddress(string.concat("INST_", name)));
-        level = vm.envAddress(string.concat("LVL_", name));
+        level = vm.envAddress(string.concat("LVL__", name));
     }
 
     function setUp() public {

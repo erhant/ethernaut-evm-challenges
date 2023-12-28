@@ -8,6 +8,7 @@ import {Attacker} from "~/helpers/GatekeeperOne.sol";
 contract GatekeeperOneTest is Test {
     GatekeeperOne target;
     address player;
+    uint256 targetGas;
 
     function setUp() public {
         player = makeAddr("player");
@@ -16,7 +17,7 @@ contract GatekeeperOneTest is Test {
     }
 
     function attack() private {
-        new Attacker(target);
+        new Attacker(target, 30_000);
     }
 
     function testAttack() public {
