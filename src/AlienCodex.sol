@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.5.0;
 
 // NOTE: We do not use this contract per se, but instead use its artifact within our test.

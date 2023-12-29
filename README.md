@@ -25,7 +25,7 @@ forge test
 
 ## [Ethernaut](https://ethernaut.openzeppelin.com/)
 
-We try to use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below. We also provide scripts to automatically solve & submit each problem, see [scripts](#scripts) section below.
+We use the original Ethernaut levels whenever possible, but there are a few exceptions as noted below. We also provide scripts to automatically solve & submit each problem, see [scripts](#scripts) section below.
 
 - [x] [Hello Ethernaut](./script/HelloEthernaut.s.sol)
 - [x] [Fallback](./script/Fallback.s.sol)
