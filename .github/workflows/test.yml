@@ -1,17 +1,18 @@
 name: test
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 env:
   FOUNDRY_PROFILE: ci
 
 jobs:
-  check:
-    strategy:
-      fail-fast: true
-
-    name: Foundry project
+  test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,18 +23,11 @@ jobs:
         with:
           version: nightly
 
-      # - name: Install Dependencies
-      #   run: |
-      #     forge install OpenZeppelin/ethernaut
-      #     forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
+      - name: Print version
+        run: forge --version
 
-      - name: Run Forge build
-        run: |
-          forge --version
-          forge build --sizes
-        id: build
+      - name: Build
+        run: forge build --sizes
 
-      - name: Run Forge tests
-        run: |
-          forge test -vvv
-        id: test
+      - name: Run tests
+        run: forge test -vvv
