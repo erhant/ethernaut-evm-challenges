@@ -22,10 +22,10 @@ jobs:
         with:
           version: nightly
 
-      - name: Install Dependencies
-        run: |
-          forge install OpenZeppelin/ethernaut
-          forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
+      # - name: Install Dependencies
+      #   run: |
+      #     forge install OpenZeppelin/ethernaut
+      #     forge install openzeppelin-contracts-08=OpenZeppelin/openzeppelin-contracts@v4.7.3
 
       - name: Run Forge build
         run: |

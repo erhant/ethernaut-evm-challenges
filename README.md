@@ -30,7 +30,7 @@ We use the original Ethernaut levels whenever possible, but there are a few exce
 - [x] [Hello Ethernaut](./script/HelloEthernaut.s.sol)
 - [x] [Fallback](./script/Fallback.s.sol)
 - [x] [Fallout](./script/Fallout.s.sol)<sup>\* uses v0.8 instead of v0.6</sup>
-- [x] [CoinFlip](./script/Coinflip.s.sol)
+- [x] [CoinFlip](./script/CoinFlip.s.sol)
 - [x] [Telephone](./script/Telephone.s.sol)
 - [x] [Token](./script/Token.s.sol)<sup>\* using v0.8 instead of v0.6</sup>
 - [x] [Delegation](./script/Delegation.s.sol)
@@ -100,16 +100,16 @@ For this reason, we must run the scripts for this level as follows:
 
 ```sh
 # (1) deploy attacker
-source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="deploy()" --broadcast
+source .env && forge script ./scripts/CoinFlip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="deploy()" --broadcast
 
 # (2) save attacker address to .env as:
 ATKR_COINFLIP=<attacker-address-here>
 
 # (3) attack (do this 10 times)
-source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="flip()" --broadcast
+source .env && forge script ./scripts/CoinFlip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY -s="flip()" --broadcast
 
 # (4) run the script as usual to submit the instance
-source .env && forge script ./scripts/Coinflip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY --broadcast
+source .env && forge script ./scripts/CoinFlip.s.sol:Solve -f=$RPC_URL --private-key=$PRIVATE_KEY --broadcast
 ```
 
 #### Edge Case: Motorbike

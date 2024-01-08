@@ -10,7 +10,6 @@ contract PrivacyTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         bytes32[3] memory data = [keccak256("super"), keccak256("duper"), keccak256("secret")];
         target = new Privacy(data);

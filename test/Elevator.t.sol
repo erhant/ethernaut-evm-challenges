@@ -11,7 +11,6 @@ contract ElevatorTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         target = new Elevator();
     }

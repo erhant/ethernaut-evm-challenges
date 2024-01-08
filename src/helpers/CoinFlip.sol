@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {CoinFlip} from "ethernaut/levels/Coinflip.sol";
+import {CoinFlip} from "ethernaut/levels/CoinFlip.sol";
 
 contract Attacker {
     CoinFlip target;

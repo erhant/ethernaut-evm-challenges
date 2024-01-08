@@ -19,7 +19,6 @@ contract DoubleEntryPointTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 10 ether);
 
         LegacyToken oldToken = new LegacyToken();
         Forta forta = new Forta();

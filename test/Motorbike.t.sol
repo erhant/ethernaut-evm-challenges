@@ -12,7 +12,6 @@ contract MotorbikeTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 10 ether);
 
         engine = new Engine();
         target = new Motorbike(address(engine));

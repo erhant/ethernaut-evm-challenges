@@ -2,8 +2,8 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {CoinFlip} from "ethernaut/levels/Coinflip.sol";
-import {Attacker} from "~/helpers/Coinflip.sol";
+import {CoinFlip} from "ethernaut/levels/CoinFlip.sol";
+import {Attacker} from "~/helpers/CoinFlip.sol";
 
 contract CoinFlipTest is Test {
     CoinFlip target;
@@ -11,7 +11,6 @@ contract CoinFlipTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         target = new CoinFlip();
     }

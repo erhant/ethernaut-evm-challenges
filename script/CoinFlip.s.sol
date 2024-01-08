@@ -5,7 +5,7 @@ import {console2} from "forge-std/Script.sol";
 import {CheckScript} from "./common/Check.sol";
 import {SolveScript} from "./common/Solve.sol";
 import {CoinFlip} from "ethernaut/levels/CoinFlip.sol";
-import {Attacker} from "~/helpers/Coinflip.sol";
+import {Attacker} from "~/helpers/CoinFlip.sol";
 
 contract Check is CheckScript("COINFLIP") {}
 
