@@ -11,7 +11,6 @@ contract PreservationTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         LibraryContract lib1 = new LibraryContract();
         LibraryContract lib2 = new LibraryContract();

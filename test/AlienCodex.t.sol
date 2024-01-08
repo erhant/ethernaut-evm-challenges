@@ -10,7 +10,6 @@ contract AlienCodexTest is Test {
 
     function setUp() public {
         player = makeAddr("player");
-        vm.deal(player, 1 ether);
 
         // NOTE: since this is a v0.5.0 specific contract, we should get the bytecode and deploy it via CREATE here,
         // forge will automatically compile it with v0.5.17 and the artifact will be under `out` as shown below
